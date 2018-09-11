@@ -1,0 +1,92 @@
+function BirdControl.new 0
+push constant 4
+call Memory.alloc 1
+pop pointer 0
+push argument 1
+pop this 1
+push argument 2
+pop this 2
+push argument 3
+pop this 3
+push argument 0
+push argument 1
+push argument 2
+push argument 3
+call Bird.new 4
+pop this 0
+push pointer 0
+return
+function BirdControl.drawDefault 0
+push argument 0
+pop pointer 0
+push this 0
+call Bird.drawDefault 1
+pop temp 0
+push constant 0
+return
+function BirdControl.moveUp 0
+push argument 0
+pop pointer 0
+push this 0
+call Bird.increaseY 1
+pop temp 0
+push this 1
+push this 2
+sub
+pop this 1
+push this 1
+push constant 255
+and
+pop this 1
+push this 0
+call Bird.drawDefault 1
+pop temp 0
+push constant 0
+return
+function BirdControl.moveDown 0
+push argument 0
+pop pointer 0
+push this 0
+call Bird.decreaseY 1
+pop temp 0
+push this 1
+push this 3
+add
+pop this 1
+push this 1
+push constant 255
+and
+pop this 1
+push this 0
+call Bird.drawDefault 1
+pop temp 0
+push constant 0
+return
+function BirdControl.getPos 0
+push argument 0
+pop pointer 0
+push this 1
+return
+function BirdControl.setPos 0
+push argument 0
+pop pointer 0
+push this 0
+push argument 1
+push argument 2
+call Bird.setPos 3
+pop temp 0
+push argument 2
+pop this 1
+push constant 0
+return
+function BirdControl.dispose 0
+push argument 0
+pop pointer 0
+push this 0
+call Bird.dispose 1
+pop temp 0
+push pointer 0
+call Memory.deAlloc 1
+pop temp 0
+push constant 0
+return

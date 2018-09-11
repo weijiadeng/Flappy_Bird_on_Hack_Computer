@@ -1,0 +1,28 @@
+function Tools.setSeed 0
+push argument 0
+pop static 0
+push static 0
+push constant 17
+call Math.multiply 2
+pop static 0
+push static 0
+push constant 7
+add
+pop static 0
+push constant 0
+return
+function Tools.random 1
+push static 0
+push constant 255
+and
+pop local 0
+push local 0
+push constant 17
+call Math.multiply 2
+pop static 0
+push static 0
+push constant 7
+add
+pop static 0
+push local 0
+return

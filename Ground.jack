@@ -1,0 +1,86 @@
+//Weijia Deng，Project 09,Nand to Tetris
+/** Implements the ground*/
+class Ground{
+    static Array ground;    //the image of the ground
+    /** Initializes the ground*/
+    function void init(){
+        let ground=Array.new(24);
+      	let ground[0]=-1;
+		let ground[1]=-1;
+		let ground[2]=-1;
+		let ground[3]=0;
+		let ground[4]=0;
+		let ground[5]=0;
+		let ground[6]=-1;
+		let ground[7]=-1;
+		let ground[8]=-32641;
+		let ground[9]=-27521;
+		let ground[10]=-8033;
+		let ground[11]=-7137;
+		let ground[12]=-1881;
+		let ground[13]=-2041;
+		let ground[14]=-1;
+		let ground[15]=-2082;
+		let ground[16]=-16645;
+		let ground[17]=-1;
+		let ground[18]=-21846;
+		let ground[19]=21845;
+		let ground[20]=-21846;
+		let ground[21]=21845;
+		let ground[22]=-21846;
+		let ground[23]=21845;
+        return;
+    }
+    /**Reclaims the resources*/
+    function void deAllocAll(){
+        do Memory.deAlloc(ground);
+        return;
+    }
+
+    /** Draws the ground*/
+    function void draw(){
+        var int address,tempAddress,i,j;
+        let address=23816;
+        //start drawing address of ground,x=128,y=232
+
+        let tempAddress=address;
+        let i=0;
+        while(i<16)
+        {
+            let j=0;
+            while(j<20)
+            {
+                do Memory.poke(tempAddress,ground[j]);
+                let j=j+1;
+                let tempAddress=tempAddress+32;
+            }
+            do Memory.poke(tempAddress,ground[18]);
+            let tempAddress=tempAddress+32;
+            do Memory.poke(tempAddress,ground[19]);
+            let i=i+1;
+            let address=address+1;
+            let tempAddress=address;
+
+        }
+        return;
+
+    }
+    /** Modifys the ground image to generate the effect of moving grounds*/
+    function void moveRight()
+    {
+        var int last,i;
+        let i=8;
+        //first 8 lines are the same, no need to change when moving left or right
+        while(i<20){
+            let last=0;
+            if(ground[i]<0)
+            {let last=1;}
+            //handling carry-bit
+            let ground[i]=ground[i]+ground[i];
+            let ground[i]=ground[i]+last;
+            let i=i+1;
+        }
+        return;
+        
+    }
+}

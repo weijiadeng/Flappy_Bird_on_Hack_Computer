@@ -1,0 +1,69 @@
+//Weijia Deng，Project 09,Nand to Tetris
+/**This class handles the movement of the bird*/
+class BirdControl{
+    field Bird bird;
+    //The bird image to control
+    field int posY;
+    //Y coordinate of the bird, used to help determine collision
+    field int upSpeed;
+    //flying up speed of the bird
+    field int downSpeed;
+    //flying down speed of the bird
+
+    /**Constructs a new BirdControl. */
+    constructor BirdControl new(int x,int y,int uS,int dS)
+    //x: x coordinate/16
+    //y: y coordinate
+    //us: Flying up speed
+    //ds: Flying down speed
+    {
+        let posY=y;
+        let upSpeed=uS;
+        let downSpeed=dS;
+        let bird=Bird.new(x,y,uS,dS);
+        return this;
+    }
+    /**Draws the bird*/
+    method void drawDefault(){
+        do bird.drawDefault();
+        return;
+    }
+    /**Moves up the bird*/
+    method void moveUp(){
+      //  do bird.erase();
+        do bird.increaseY();
+        let posY=posY-upSpeed;
+        let posY=posY&255;
+        // %256 to avoid overstepping the boundary
+        do bird.drawDefault();
+       
+        return;
+    }
+    /**Moves down the bird*/
+     method void moveDown(){
+      //  do bird.erase();
+        do bird.decreaseY();
+        let posY=posY+downSpeed;
+        let posY=posY&255;
+        // %256 to avoid overstepping the boundary
+        do bird.drawDefault();
+        return;
+    }
+    /**Gets the bird's coordinate*/
+    method int getPos(){
+        return posY;
+    }
+
+    /**Sets the coordinate of the bird*/
+    method void setPos(int x,int y){
+        do bird.setPos(x,y);
+        let posY=y;
+        return;
+    }
+    /**Destructor*/
+    method void dispose(){
+        do bird.dispose();
+        do Memory.deAlloc(this);
+        return;
+    }
+}

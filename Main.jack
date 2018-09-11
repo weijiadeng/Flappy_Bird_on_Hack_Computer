@@ -1,0 +1,11 @@
+//Weijia Deng，Project 09,Nand to Tetris
+/** Initializes a new Flying Bird game and starts running it. */
+class Main{
+    function void main(){
+        var Game birdC;
+        let birdC=Game.new();
+        do birdC.run();
+        do birdC.dispose();
+        return;
+    }
+}

@@ -1,0 +1,24 @@
+//Weijia Deng，Project 09,Nand to Tetris
+
+/** Extra tools*/
+class Tools{
+    static int m;
+    /** Set seed of the pseudo random generator */
+    function void setSeed(int seed){
+        
+        let m=seed;
+        let m=m*17;
+        let m=m+7;
+        return;
+    }
+    /** Pseudo random generator */
+    function int random(){
+        var int val;
+        let val=m&255;
+        let m=val*17;
+        let m=m+7;
+        return val;
+    }
+
+    
+}

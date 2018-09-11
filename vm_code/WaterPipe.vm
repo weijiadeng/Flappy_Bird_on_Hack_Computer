@@ -1,0 +1,2853 @@
+function WaterPipe.new 0
+push constant 4
+call Memory.alloc 1
+pop pointer 0
+push argument 0
+pop this 0
+push argument 1
+pop this 1
+push constant 202
+push argument 0
+sub
+push argument 1
+sub
+pop this 2
+push argument 2
+pop this 3
+push pointer 0
+return
+function WaterPipe.init 0
+call WaterPipe.headInit 0
+pop temp 0
+call WaterPipe.bodyInit 0
+pop temp 0
+push constant 0
+pop static 2
+push constant 0
+pop static 3
+push constant 0
+return
+function WaterPipe.deAllocAll 0
+push static 0
+call Memory.deAlloc 1
+pop temp 0
+push static 1
+call Memory.deAlloc 1
+pop temp 0
+push constant 0
+return
+function WaterPipe.dispose 0
+push argument 0
+pop pointer 0
+push pointer 0
+call Memory.deAlloc 1
+pop temp 0
+push constant 0
+return
+function WaterPipe.setPos 0
+push argument 0
+pop pointer 0
+push argument 1
+pop this 0
+push argument 2
+pop this 1
+push constant 202
+push argument 1
+sub
+push argument 2
+sub
+pop this 2
+push argument 3
+pop this 3
+call WaterPipe.deAllocAll 0
+pop temp 0
+call WaterPipe.headInit 0
+pop temp 0
+call WaterPipe.bodyInit 0
+pop temp 0
+push constant 0
+pop static 2
+push constant 0
+pop static 3
+push constant 0
+return
+function WaterPipe.headInit 1
+push constant 15
+call Array.new 1
+pop static 0
+push constant 0
+push static 0
+add
+push constant 3
+call Array.new 1
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 0
+push static 0
+add
+pop pointer 1
+push that 0
+pop local 0
+push constant 0
+push local 0
+add
+push constant 2
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 1
+push local 0
+add
+push constant 16383
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 2
+push local 0
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 1
+push static 0
+add
+push constant 3
+call Array.new 1
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 1
+push static 0
+add
+pop pointer 1
+push that 0
+pop local 0
+push constant 0
+push local 0
+add
+push constant 2
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 1
+push local 0
+add
+push constant 16383
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 2
+push local 0
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 2
+push static 0
+add
+push constant 3
+call Array.new 1
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 2
+push static 0
+add
+pop pointer 1
+push that 0
+pop local 0
+push constant 0
+push local 0
+add
+push constant 6
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 1
+push local 0
+add
+push constant 8192
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 2
+push local 0
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 3
+push static 0
+add
+push constant 3
+call Array.new 1
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 3
+push static 0
+add
+pop pointer 1
+push that 0
+pop local 0
+push constant 0
+push local 0
+add
+push constant 110
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 1
+push local 0
+add
+push constant 8192
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 2
+push local 0
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 4
+push static 0
+add
+push constant 3
+call Array.new 1
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 4
+push static 0
+add
+pop pointer 1
+push that 0
+pop local 0
+push constant 0
+push local 0
+add
+push constant 110
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 1
+push local 0
+add
+push constant 8192
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 2
+push local 0
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 5
+push static 0
+add
+push constant 3
+call Array.new 1
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 5
+push static 0
+add
+pop pointer 1
+push that 0
+pop local 0
+push constant 0
+push local 0
+add
+push constant 110
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 1
+push local 0
+add
+push constant 8192
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 2
+push local 0
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 6
+push static 0
+add
+push constant 3
+call Array.new 1
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 6
+push static 0
+add
+pop pointer 1
+push that 0
+pop local 0
+push constant 0
+push local 0
+add
+push constant 110
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 1
+push local 0
+add
+push constant 8192
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 2
+push local 0
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 7
+push static 0
+add
+push constant 3
+call Array.new 1
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 7
+push static 0
+add
+pop pointer 1
+push that 0
+pop local 0
+push constant 0
+push local 0
+add
+push constant 110
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 1
+push local 0
+add
+push constant 8192
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 2
+push local 0
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 8
+push static 0
+add
+push constant 3
+call Array.new 1
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 8
+push static 0
+add
+pop pointer 1
+push that 0
+pop local 0
+push constant 0
+push local 0
+add
+push constant 110
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 1
+push local 0
+add
+push constant 8192
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 2
+push local 0
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 9
+push static 0
+add
+push constant 3
+call Array.new 1
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 9
+push static 0
+add
+pop pointer 1
+push that 0
+pop local 0
+push constant 0
+push local 0
+add
+push constant 110
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 1
+push local 0
+add
+push constant 8192
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 2
+push local 0
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 10
+push static 0
+add
+push constant 3
+call Array.new 1
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 10
+push static 0
+add
+pop pointer 1
+push that 0
+pop local 0
+push constant 0
+push local 0
+add
+push constant 110
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 1
+push local 0
+add
+push constant 8192
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 2
+push local 0
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 11
+push static 0
+add
+push constant 3
+call Array.new 1
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 11
+push static 0
+add
+pop pointer 1
+push that 0
+pop local 0
+push constant 0
+push local 0
+add
+push constant 110
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 1
+push local 0
+add
+push constant 12288
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 2
+push local 0
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 12
+push static 0
+add
+push constant 3
+call Array.new 1
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 12
+push static 0
+add
+pop pointer 1
+push that 0
+pop local 0
+push constant 0
+push local 0
+add
+push constant 2
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 1
+push local 0
+add
+push constant 16383
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 2
+push local 0
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 13
+push static 0
+add
+push constant 3
+call Array.new 1
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 13
+push static 0
+add
+pop pointer 1
+push that 0
+pop local 0
+push constant 0
+push local 0
+add
+push constant 2
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 1
+push local 0
+add
+push constant 16383
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 2
+push local 0
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 14
+push static 0
+add
+push constant 3
+call Array.new 1
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 14
+push static 0
+add
+pop pointer 1
+push that 0
+pop local 0
+push constant 0
+push local 0
+add
+push constant 156
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 1
+push local 0
+add
+push constant 6144
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 2
+push local 0
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 0
+return
+function WaterPipe.bodyInit 0
+push constant 3
+call Array.new 1
+pop static 1
+push constant 0
+push static 1
+add
+push constant 156
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 1
+push static 1
+add
+push constant 6144
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 2
+push static 1
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 0
+return
+function WaterPipe.arrayMoveRight 3
+push constant 1
+pop local 2
+push constant 2
+push argument 0
+add
+pop pointer 1
+push that 0
+push constant 1
+neg
+gt
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push constant 0
+pop local 2
+label IF_FALSE0
+push constant 2
+push argument 0
+add
+push constant 2
+push argument 0
+add
+pop pointer 1
+push that 0
+push constant 2
+push argument 0
+add
+pop pointer 1
+push that 0
+add
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 1
+pop local 1
+push constant 1
+push argument 0
+add
+pop pointer 1
+push that 0
+push constant 1
+neg
+gt
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push constant 0
+pop local 1
+label IF_FALSE1
+push constant 1
+push argument 0
+add
+push constant 1
+push argument 0
+add
+pop pointer 1
+push that 0
+push constant 1
+push argument 0
+add
+pop pointer 1
+push that 0
+add
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 1
+pop local 0
+push constant 0
+push argument 0
+add
+pop pointer 1
+push that 0
+push constant 1
+neg
+gt
+if-goto IF_TRUE2
+goto IF_FALSE2
+label IF_TRUE2
+push constant 0
+pop local 0
+label IF_FALSE2
+push constant 0
+push argument 0
+add
+push constant 0
+push argument 0
+add
+pop pointer 1
+push that 0
+push constant 0
+push argument 0
+add
+pop pointer 1
+push that 0
+add
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 0
+push argument 0
+add
+push constant 0
+push argument 0
+add
+pop pointer 1
+push that 0
+push local 2
+add
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 1
+push argument 0
+add
+push constant 1
+push argument 0
+add
+pop pointer 1
+push that 0
+push local 0
+add
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 2
+push argument 0
+add
+push constant 2
+push argument 0
+add
+pop pointer 1
+push that 0
+push local 1
+add
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 0
+return
+function WaterPipe.globalMoveRight 1
+push static 3
+push constant 1
+add
+push constant 15
+and
+pop static 3
+push static 3
+push constant 0
+eq
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push static 2
+push constant 1
+add
+push constant 3
+and
+pop static 2
+push static 2
+push constant 3
+eq
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push constant 0
+pop static 2
+label IF_FALSE1
+label IF_FALSE0
+push constant 0
+pop local 0
+label WHILE_EXP0
+push local 0
+push constant 15
+lt
+not
+if-goto WHILE_END0
+push local 0
+push static 0
+add
+pop pointer 1
+push that 0
+call WaterPipe.arrayMoveRight 1
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP0
+label WHILE_END0
+push static 1
+call WaterPipe.arrayMoveRight 1
+pop temp 0
+push constant 0
+return
+function WaterPipe.moveRight 0
+push argument 0
+pop pointer 0
+push static 3
+push constant 0
+eq
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push this 3
+push constant 1
+add
+pop this 3
+push this 3
+push constant 24
+gt
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push constant 5
+pop this 3
+call Tools.random 0
+push constant 2
+call Math.divide 2
+pop this 0
+push constant 50
+call Tools.random 0
+push constant 10
+call Math.divide 2
+add
+pop this 1
+push constant 202
+push this 0
+sub
+push this 1
+sub
+pop this 2
+label IF_FALSE1
+label IF_FALSE0
+push constant 0
+return
+function WaterPipe.draw 1
+push argument 0
+pop pointer 0
+push constant 16384
+push this 3
+add
+pop static 4
+push constant 0
+pop local 0
+push this 3
+push constant 7
+gt
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push this 3
+push constant 22
+lt
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push static 2
+push constant 0
+eq
+if-goto IF_TRUE2
+goto IF_FALSE2
+label IF_TRUE2
+label WHILE_EXP0
+push local 0
+push this 0
+lt
+not
+if-goto WHILE_END0
+push static 1
+call WaterPipe.drawArray0 1
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP0
+label WHILE_END0
+push constant 14
+pop local 0
+label WHILE_EXP1
+push local 0
+push constant 1
+neg
+gt
+not
+if-goto WHILE_END1
+push local 0
+push static 0
+add
+pop pointer 1
+push that 0
+call WaterPipe.drawArray0 1
+pop temp 0
+push local 0
+push constant 1
+sub
+pop local 0
+goto WHILE_EXP1
+label WHILE_END1
+push constant 0
+pop local 0
+label WHILE_EXP2
+push local 0
+push this 1
+lt
+not
+if-goto WHILE_END2
+push local 0
+push constant 1
+add
+pop local 0
+push static 4
+push constant 32
+add
+pop static 4
+goto WHILE_EXP2
+label WHILE_END2
+push constant 0
+pop local 0
+label WHILE_EXP3
+push local 0
+push constant 15
+lt
+not
+if-goto WHILE_END3
+push local 0
+push static 0
+add
+pop pointer 1
+push that 0
+call WaterPipe.drawArray0 1
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP3
+label WHILE_END3
+push constant 0
+pop local 0
+label WHILE_EXP4
+push local 0
+push this 2
+lt
+not
+if-goto WHILE_END4
+push static 1
+call WaterPipe.drawArray0 1
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP4
+label WHILE_END4
+goto IF_END2
+label IF_FALSE2
+push static 2
+push constant 1
+eq
+if-goto IF_TRUE3
+goto IF_FALSE3
+label IF_TRUE3
+label WHILE_EXP5
+push local 0
+push this 0
+lt
+not
+if-goto WHILE_END5
+push static 1
+call WaterPipe.drawArray1 1
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP5
+label WHILE_END5
+push constant 14
+pop local 0
+label WHILE_EXP6
+push local 0
+push constant 1
+neg
+gt
+not
+if-goto WHILE_END6
+push local 0
+push static 0
+add
+pop pointer 1
+push that 0
+call WaterPipe.drawArray1 1
+pop temp 0
+push local 0
+push constant 1
+sub
+pop local 0
+goto WHILE_EXP6
+label WHILE_END6
+push constant 0
+pop local 0
+label WHILE_EXP7
+push local 0
+push this 1
+lt
+not
+if-goto WHILE_END7
+push local 0
+push constant 1
+add
+pop local 0
+push static 4
+push constant 32
+add
+pop static 4
+goto WHILE_EXP7
+label WHILE_END7
+push constant 0
+pop local 0
+label WHILE_EXP8
+push local 0
+push constant 15
+lt
+not
+if-goto WHILE_END8
+push local 0
+push static 0
+add
+pop pointer 1
+push that 0
+call WaterPipe.drawArray1 1
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP8
+label WHILE_END8
+push constant 0
+pop local 0
+label WHILE_EXP9
+push local 0
+push this 2
+lt
+not
+if-goto WHILE_END9
+push static 1
+call WaterPipe.drawArray1 1
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP9
+label WHILE_END9
+goto IF_END3
+label IF_FALSE3
+label WHILE_EXP10
+push local 0
+push this 0
+lt
+not
+if-goto WHILE_END10
+push static 1
+call WaterPipe.drawArray2 1
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP10
+label WHILE_END10
+push constant 14
+pop local 0
+label WHILE_EXP11
+push local 0
+push constant 1
+neg
+gt
+not
+if-goto WHILE_END11
+push local 0
+push static 0
+add
+pop pointer 1
+push that 0
+call WaterPipe.drawArray2 1
+pop temp 0
+push local 0
+push constant 1
+sub
+pop local 0
+goto WHILE_EXP11
+label WHILE_END11
+push constant 0
+pop local 0
+label WHILE_EXP12
+push local 0
+push this 1
+lt
+not
+if-goto WHILE_END12
+push local 0
+push constant 1
+add
+pop local 0
+push static 4
+push constant 32
+add
+pop static 4
+goto WHILE_EXP12
+label WHILE_END12
+push constant 0
+pop local 0
+label WHILE_EXP13
+push local 0
+push constant 15
+lt
+not
+if-goto WHILE_END13
+push local 0
+push static 0
+add
+pop pointer 1
+push that 0
+call WaterPipe.drawArray2 1
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP13
+label WHILE_END13
+push constant 0
+pop local 0
+label WHILE_EXP14
+push local 0
+push this 2
+lt
+not
+if-goto WHILE_END14
+push static 1
+call WaterPipe.drawArray2 1
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP14
+label WHILE_END14
+label IF_END3
+label IF_END2
+label IF_FALSE1
+push this 3
+push constant 22
+eq
+if-goto IF_TRUE4
+goto IF_FALSE4
+label IF_TRUE4
+push static 2
+push constant 0
+eq
+if-goto IF_TRUE5
+goto IF_FALSE5
+label IF_TRUE5
+label WHILE_EXP15
+push local 0
+push this 0
+lt
+not
+if-goto WHILE_END15
+push static 1
+call WaterPipe.drawArray0R 1
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP15
+label WHILE_END15
+push constant 14
+pop local 0
+label WHILE_EXP16
+push local 0
+push constant 1
+neg
+gt
+not
+if-goto WHILE_END16
+push local 0
+push static 0
+add
+pop pointer 1
+push that 0
+call WaterPipe.drawArray0R 1
+pop temp 0
+push local 0
+push constant 1
+sub
+pop local 0
+goto WHILE_EXP16
+label WHILE_END16
+push constant 0
+pop local 0
+label WHILE_EXP17
+push local 0
+push this 1
+lt
+not
+if-goto WHILE_END17
+push local 0
+push constant 1
+add
+pop local 0
+push static 4
+push constant 32
+add
+pop static 4
+goto WHILE_EXP17
+label WHILE_END17
+push constant 0
+pop local 0
+label WHILE_EXP18
+push local 0
+push constant 15
+lt
+not
+if-goto WHILE_END18
+push local 0
+push static 0
+add
+pop pointer 1
+push that 0
+call WaterPipe.drawArray0R 1
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP18
+label WHILE_END18
+push constant 0
+pop local 0
+label WHILE_EXP19
+push local 0
+push this 2
+lt
+not
+if-goto WHILE_END19
+push static 1
+call WaterPipe.drawArray0R 1
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP19
+label WHILE_END19
+goto IF_END5
+label IF_FALSE5
+push static 2
+push constant 1
+eq
+if-goto IF_TRUE6
+goto IF_FALSE6
+label IF_TRUE6
+label WHILE_EXP20
+push local 0
+push this 0
+lt
+not
+if-goto WHILE_END20
+push static 1
+call WaterPipe.drawArray1R 1
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP20
+label WHILE_END20
+push constant 14
+pop local 0
+label WHILE_EXP21
+push local 0
+push constant 1
+neg
+gt
+not
+if-goto WHILE_END21
+push local 0
+push static 0
+add
+pop pointer 1
+push that 0
+call WaterPipe.drawArray1R 1
+pop temp 0
+push local 0
+push constant 1
+sub
+pop local 0
+goto WHILE_EXP21
+label WHILE_END21
+push constant 0
+pop local 0
+label WHILE_EXP22
+push local 0
+push this 1
+lt
+not
+if-goto WHILE_END22
+push local 0
+push constant 1
+add
+pop local 0
+push static 4
+push constant 32
+add
+pop static 4
+goto WHILE_EXP22
+label WHILE_END22
+push constant 0
+pop local 0
+label WHILE_EXP23
+push local 0
+push constant 15
+lt
+not
+if-goto WHILE_END23
+push local 0
+push static 0
+add
+pop pointer 1
+push that 0
+call WaterPipe.drawArray1R 1
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP23
+label WHILE_END23
+push constant 0
+pop local 0
+label WHILE_EXP24
+push local 0
+push this 2
+lt
+not
+if-goto WHILE_END24
+push static 1
+call WaterPipe.drawArray1R 1
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP24
+label WHILE_END24
+goto IF_END6
+label IF_FALSE6
+label WHILE_EXP25
+push local 0
+push this 0
+lt
+not
+if-goto WHILE_END25
+push static 1
+call WaterPipe.drawArray2R 1
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP25
+label WHILE_END25
+push constant 14
+pop local 0
+label WHILE_EXP26
+push local 0
+push constant 1
+neg
+gt
+not
+if-goto WHILE_END26
+push local 0
+push static 0
+add
+pop pointer 1
+push that 0
+call WaterPipe.drawArray2R 1
+pop temp 0
+push local 0
+push constant 1
+sub
+pop local 0
+goto WHILE_EXP26
+label WHILE_END26
+push constant 0
+pop local 0
+label WHILE_EXP27
+push local 0
+push this 1
+lt
+not
+if-goto WHILE_END27
+push local 0
+push constant 1
+add
+pop local 0
+push static 4
+push constant 32
+add
+pop static 4
+goto WHILE_EXP27
+label WHILE_END27
+push constant 0
+pop local 0
+label WHILE_EXP28
+push local 0
+push constant 15
+lt
+not
+if-goto WHILE_END28
+push local 0
+push static 0
+add
+pop pointer 1
+push that 0
+call WaterPipe.drawArray2R 1
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP28
+label WHILE_END28
+push constant 0
+pop local 0
+label WHILE_EXP29
+push local 0
+push this 2
+lt
+not
+if-goto WHILE_END29
+push static 1
+call WaterPipe.drawArray2R 1
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP29
+label WHILE_END29
+label IF_END6
+label IF_END5
+label IF_FALSE4
+push this 3
+push constant 23
+eq
+if-goto IF_TRUE7
+goto IF_FALSE7
+label IF_TRUE7
+push static 2
+push constant 0
+eq
+if-goto IF_TRUE8
+goto IF_FALSE8
+label IF_TRUE8
+label WHILE_EXP30
+push local 0
+push this 0
+lt
+not
+if-goto WHILE_END30
+push static 1
+call WaterPipe.drawArray0RR 1
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP30
+label WHILE_END30
+push constant 14
+pop local 0
+label WHILE_EXP31
+push local 0
+push constant 1
+neg
+gt
+not
+if-goto WHILE_END31
+push local 0
+push static 0
+add
+pop pointer 1
+push that 0
+call WaterPipe.drawArray0RR 1
+pop temp 0
+push local 0
+push constant 1
+sub
+pop local 0
+goto WHILE_EXP31
+label WHILE_END31
+push constant 0
+pop local 0
+label WHILE_EXP32
+push local 0
+push this 1
+lt
+not
+if-goto WHILE_END32
+push local 0
+push constant 1
+add
+pop local 0
+push static 4
+push constant 32
+add
+pop static 4
+goto WHILE_EXP32
+label WHILE_END32
+push constant 0
+pop local 0
+label WHILE_EXP33
+push local 0
+push constant 15
+lt
+not
+if-goto WHILE_END33
+push local 0
+push static 0
+add
+pop pointer 1
+push that 0
+call WaterPipe.drawArray0RR 1
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP33
+label WHILE_END33
+push constant 0
+pop local 0
+label WHILE_EXP34
+push local 0
+push this 2
+lt
+not
+if-goto WHILE_END34
+push static 1
+call WaterPipe.drawArray0RR 1
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP34
+label WHILE_END34
+goto IF_END8
+label IF_FALSE8
+push static 2
+push constant 1
+eq
+if-goto IF_TRUE9
+goto IF_FALSE9
+label IF_TRUE9
+label WHILE_EXP35
+push local 0
+push this 0
+lt
+not
+if-goto WHILE_END35
+push static 1
+call WaterPipe.drawArray1RR 1
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP35
+label WHILE_END35
+push constant 14
+pop local 0
+label WHILE_EXP36
+push local 0
+push constant 1
+neg
+gt
+not
+if-goto WHILE_END36
+push local 0
+push static 0
+add
+pop pointer 1
+push that 0
+call WaterPipe.drawArray1RR 1
+pop temp 0
+push local 0
+push constant 1
+sub
+pop local 0
+goto WHILE_EXP36
+label WHILE_END36
+push constant 0
+pop local 0
+label WHILE_EXP37
+push local 0
+push this 1
+lt
+not
+if-goto WHILE_END37
+push local 0
+push constant 1
+add
+pop local 0
+push static 4
+push constant 32
+add
+pop static 4
+goto WHILE_EXP37
+label WHILE_END37
+push constant 0
+pop local 0
+label WHILE_EXP38
+push local 0
+push constant 15
+lt
+not
+if-goto WHILE_END38
+push local 0
+push static 0
+add
+pop pointer 1
+push that 0
+call WaterPipe.drawArray1RR 1
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP38
+label WHILE_END38
+push constant 0
+pop local 0
+label WHILE_EXP39
+push local 0
+push this 2
+lt
+not
+if-goto WHILE_END39
+push static 1
+call WaterPipe.drawArray1RR 1
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP39
+label WHILE_END39
+goto IF_END9
+label IF_FALSE9
+label WHILE_EXP40
+push local 0
+push this 0
+lt
+not
+if-goto WHILE_END40
+push static 1
+call WaterPipe.drawArray2RR 1
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP40
+label WHILE_END40
+push constant 14
+pop local 0
+label WHILE_EXP41
+push local 0
+push constant 1
+neg
+gt
+not
+if-goto WHILE_END41
+push local 0
+push static 0
+add
+pop pointer 1
+push that 0
+call WaterPipe.drawArray2RR 1
+pop temp 0
+push local 0
+push constant 1
+sub
+pop local 0
+goto WHILE_EXP41
+label WHILE_END41
+push constant 0
+pop local 0
+label WHILE_EXP42
+push local 0
+push this 1
+lt
+not
+if-goto WHILE_END42
+push local 0
+push constant 1
+add
+pop local 0
+push static 4
+push constant 32
+add
+pop static 4
+goto WHILE_EXP42
+label WHILE_END42
+push constant 0
+pop local 0
+label WHILE_EXP43
+push local 0
+push constant 15
+lt
+not
+if-goto WHILE_END43
+push local 0
+push static 0
+add
+pop pointer 1
+push that 0
+call WaterPipe.drawArray2RR 1
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP43
+label WHILE_END43
+push constant 0
+pop local 0
+label WHILE_EXP44
+push local 0
+push this 2
+lt
+not
+if-goto WHILE_END44
+push static 1
+call WaterPipe.drawArray2RR 1
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP44
+label WHILE_END44
+label IF_END9
+label IF_END8
+label IF_FALSE7
+goto IF_END0
+label IF_FALSE0
+push this 3
+push constant 7
+eq
+if-goto IF_TRUE10
+goto IF_FALSE10
+label IF_TRUE10
+push static 2
+push constant 0
+eq
+if-goto IF_TRUE11
+goto IF_FALSE11
+label IF_TRUE11
+label WHILE_EXP45
+push local 0
+push this 0
+lt
+not
+if-goto WHILE_END45
+push static 1
+call WaterPipe.drawArray0L 1
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP45
+label WHILE_END45
+push constant 14
+pop local 0
+label WHILE_EXP46
+push local 0
+push constant 1
+neg
+gt
+not
+if-goto WHILE_END46
+push local 0
+push static 0
+add
+pop pointer 1
+push that 0
+call WaterPipe.drawArray0L 1
+pop temp 0
+push local 0
+push constant 1
+sub
+pop local 0
+goto WHILE_EXP46
+label WHILE_END46
+push constant 0
+pop local 0
+label WHILE_EXP47
+push local 0
+push this 1
+lt
+not
+if-goto WHILE_END47
+push local 0
+push constant 1
+add
+pop local 0
+push static 4
+push constant 32
+add
+pop static 4
+goto WHILE_EXP47
+label WHILE_END47
+push constant 0
+pop local 0
+label WHILE_EXP48
+push local 0
+push constant 15
+lt
+not
+if-goto WHILE_END48
+push local 0
+push static 0
+add
+pop pointer 1
+push that 0
+call WaterPipe.drawArray0L 1
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP48
+label WHILE_END48
+push constant 0
+pop local 0
+label WHILE_EXP49
+push local 0
+push this 2
+lt
+not
+if-goto WHILE_END49
+push static 1
+call WaterPipe.drawArray0L 1
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP49
+label WHILE_END49
+goto IF_END11
+label IF_FALSE11
+push static 2
+push constant 1
+eq
+if-goto IF_TRUE12
+goto IF_FALSE12
+label IF_TRUE12
+label WHILE_EXP50
+push local 0
+push this 0
+lt
+not
+if-goto WHILE_END50
+push static 1
+call WaterPipe.drawArray1L 1
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP50
+label WHILE_END50
+push constant 14
+pop local 0
+label WHILE_EXP51
+push local 0
+push constant 1
+neg
+gt
+not
+if-goto WHILE_END51
+push local 0
+push static 0
+add
+pop pointer 1
+push that 0
+call WaterPipe.drawArray1L 1
+pop temp 0
+push local 0
+push constant 1
+sub
+pop local 0
+goto WHILE_EXP51
+label WHILE_END51
+push constant 0
+pop local 0
+label WHILE_EXP52
+push local 0
+push this 1
+lt
+not
+if-goto WHILE_END52
+push local 0
+push constant 1
+add
+pop local 0
+push static 4
+push constant 32
+add
+pop static 4
+goto WHILE_EXP52
+label WHILE_END52
+push constant 0
+pop local 0
+label WHILE_EXP53
+push local 0
+push constant 15
+lt
+not
+if-goto WHILE_END53
+push local 0
+push static 0
+add
+pop pointer 1
+push that 0
+call WaterPipe.drawArray1L 1
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP53
+label WHILE_END53
+push constant 0
+pop local 0
+label WHILE_EXP54
+push local 0
+push this 2
+lt
+not
+if-goto WHILE_END54
+push static 1
+call WaterPipe.drawArray1L 1
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP54
+label WHILE_END54
+goto IF_END12
+label IF_FALSE12
+label WHILE_EXP55
+push local 0
+push this 0
+lt
+not
+if-goto WHILE_END55
+push static 1
+call WaterPipe.drawArray2L 1
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP55
+label WHILE_END55
+push constant 14
+pop local 0
+label WHILE_EXP56
+push local 0
+push constant 1
+neg
+gt
+not
+if-goto WHILE_END56
+push local 0
+push static 0
+add
+pop pointer 1
+push that 0
+call WaterPipe.drawArray2L 1
+pop temp 0
+push local 0
+push constant 1
+sub
+pop local 0
+goto WHILE_EXP56
+label WHILE_END56
+push constant 0
+pop local 0
+label WHILE_EXP57
+push local 0
+push this 1
+lt
+not
+if-goto WHILE_END57
+push local 0
+push constant 1
+add
+pop local 0
+push static 4
+push constant 32
+add
+pop static 4
+goto WHILE_EXP57
+label WHILE_END57
+push constant 0
+pop local 0
+label WHILE_EXP58
+push local 0
+push constant 15
+lt
+not
+if-goto WHILE_END58
+push local 0
+push static 0
+add
+pop pointer 1
+push that 0
+call WaterPipe.drawArray2L 1
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP58
+label WHILE_END58
+push constant 0
+pop local 0
+label WHILE_EXP59
+push local 0
+push this 2
+lt
+not
+if-goto WHILE_END59
+push static 1
+call WaterPipe.drawArray2L 1
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP59
+label WHILE_END59
+label IF_END12
+label IF_END11
+label IF_FALSE10
+push this 3
+push constant 6
+eq
+if-goto IF_TRUE13
+goto IF_FALSE13
+label IF_TRUE13
+push static 2
+push constant 0
+eq
+if-goto IF_TRUE14
+goto IF_FALSE14
+label IF_TRUE14
+label WHILE_EXP60
+push local 0
+push this 0
+lt
+not
+if-goto WHILE_END60
+push static 1
+call WaterPipe.drawArray0LL 1
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP60
+label WHILE_END60
+push constant 14
+pop local 0
+label WHILE_EXP61
+push local 0
+push constant 1
+neg
+gt
+not
+if-goto WHILE_END61
+push local 0
+push static 0
+add
+pop pointer 1
+push that 0
+call WaterPipe.drawArray0LL 1
+pop temp 0
+push local 0
+push constant 1
+sub
+pop local 0
+goto WHILE_EXP61
+label WHILE_END61
+push constant 0
+pop local 0
+label WHILE_EXP62
+push local 0
+push this 1
+lt
+not
+if-goto WHILE_END62
+push local 0
+push constant 1
+add
+pop local 0
+push static 4
+push constant 32
+add
+pop static 4
+goto WHILE_EXP62
+label WHILE_END62
+push constant 0
+pop local 0
+label WHILE_EXP63
+push local 0
+push constant 15
+lt
+not
+if-goto WHILE_END63
+push local 0
+push static 0
+add
+pop pointer 1
+push that 0
+call WaterPipe.drawArray0LL 1
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP63
+label WHILE_END63
+push constant 0
+pop local 0
+label WHILE_EXP64
+push local 0
+push this 2
+lt
+not
+if-goto WHILE_END64
+push static 1
+call WaterPipe.drawArray0LL 1
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP64
+label WHILE_END64
+goto IF_END14
+label IF_FALSE14
+push static 2
+push constant 1
+eq
+if-goto IF_TRUE15
+goto IF_FALSE15
+label IF_TRUE15
+label WHILE_EXP65
+push local 0
+push this 0
+lt
+not
+if-goto WHILE_END65
+push static 1
+call WaterPipe.drawArray1LL 1
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP65
+label WHILE_END65
+push constant 14
+pop local 0
+label WHILE_EXP66
+push local 0
+push constant 1
+neg
+gt
+not
+if-goto WHILE_END66
+push local 0
+push static 0
+add
+pop pointer 1
+push that 0
+call WaterPipe.drawArray1LL 1
+pop temp 0
+push local 0
+push constant 1
+sub
+pop local 0
+goto WHILE_EXP66
+label WHILE_END66
+push constant 0
+pop local 0
+label WHILE_EXP67
+push local 0
+push this 1
+lt
+not
+if-goto WHILE_END67
+push local 0
+push constant 1
+add
+pop local 0
+push static 4
+push constant 32
+add
+pop static 4
+goto WHILE_EXP67
+label WHILE_END67
+push constant 0
+pop local 0
+label WHILE_EXP68
+push local 0
+push constant 15
+lt
+not
+if-goto WHILE_END68
+push local 0
+push static 0
+add
+pop pointer 1
+push that 0
+call WaterPipe.drawArray1LL 1
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP68
+label WHILE_END68
+push constant 0
+pop local 0
+label WHILE_EXP69
+push local 0
+push this 2
+lt
+not
+if-goto WHILE_END69
+push static 1
+call WaterPipe.drawArray1LL 1
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP69
+label WHILE_END69
+goto IF_END15
+label IF_FALSE15
+label WHILE_EXP70
+push local 0
+push this 0
+lt
+not
+if-goto WHILE_END70
+push static 1
+call WaterPipe.drawArray2LL 1
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP70
+label WHILE_END70
+push constant 14
+pop local 0
+label WHILE_EXP71
+push local 0
+push constant 1
+neg
+gt
+not
+if-goto WHILE_END71
+push local 0
+push static 0
+add
+pop pointer 1
+push that 0
+call WaterPipe.drawArray2LL 1
+pop temp 0
+push local 0
+push constant 1
+sub
+pop local 0
+goto WHILE_EXP71
+label WHILE_END71
+push constant 0
+pop local 0
+label WHILE_EXP72
+push local 0
+push this 1
+lt
+not
+if-goto WHILE_END72
+push local 0
+push constant 1
+add
+pop local 0
+push static 4
+push constant 32
+add
+pop static 4
+goto WHILE_EXP72
+label WHILE_END72
+push constant 0
+pop local 0
+label WHILE_EXP73
+push local 0
+push constant 15
+lt
+not
+if-goto WHILE_END73
+push local 0
+push static 0
+add
+pop pointer 1
+push that 0
+call WaterPipe.drawArray2LL 1
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP73
+label WHILE_END73
+push constant 0
+pop local 0
+label WHILE_EXP74
+push local 0
+push this 2
+lt
+not
+if-goto WHILE_END74
+push static 1
+call WaterPipe.drawArray2LL 1
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP74
+label WHILE_END74
+label IF_END15
+label IF_END14
+label IF_FALSE13
+label IF_END0
+push constant 0
+return
+function WaterPipe.drawArray0 0
+push static 4
+push constant 0
+push argument 0
+add
+pop pointer 1
+push that 0
+call Memory.poke 2
+pop temp 0
+push static 4
+push constant 1
+add
+push constant 1
+push argument 0
+add
+pop pointer 1
+push that 0
+call Memory.poke 2
+pop temp 0
+push static 4
+push constant 2
+add
+push constant 2
+push argument 0
+add
+pop pointer 1
+push that 0
+call Memory.poke 2
+pop temp 0
+push static 4
+push constant 32
+add
+pop static 4
+push constant 0
+return
+function WaterPipe.drawArray1 0
+push static 4
+push constant 1
+push argument 0
+add
+pop pointer 1
+push that 0
+call Memory.poke 2
+pop temp 0
+push static 4
+push constant 1
+add
+push constant 2
+push argument 0
+add
+pop pointer 1
+push that 0
+call Memory.poke 2
+pop temp 0
+push static 4
+push constant 2
+add
+push constant 0
+push argument 0
+add
+pop pointer 1
+push that 0
+call Memory.poke 2
+pop temp 0
+push static 4
+push constant 32
+add
+pop static 4
+push constant 0
+return
+function WaterPipe.drawArray2 0
+push static 4
+push constant 2
+push argument 0
+add
+pop pointer 1
+push that 0
+call Memory.poke 2
+pop temp 0
+push static 4
+push constant 1
+add
+push constant 0
+push argument 0
+add
+pop pointer 1
+push that 0
+call Memory.poke 2
+pop temp 0
+push static 4
+push constant 2
+add
+push constant 1
+push argument 0
+add
+pop pointer 1
+push that 0
+call Memory.poke 2
+pop temp 0
+push static 4
+push constant 32
+add
+pop static 4
+push constant 0
+return
+function WaterPipe.drawArray0R 0
+push static 4
+push constant 0
+push argument 0
+add
+pop pointer 1
+push that 0
+call Memory.poke 2
+pop temp 0
+push static 4
+push constant 1
+add
+push constant 1
+push argument 0
+add
+pop pointer 1
+push that 0
+call Memory.poke 2
+pop temp 0
+push static 4
+push constant 32
+add
+pop static 4
+push constant 0
+return
+function WaterPipe.drawArray1R 0
+push static 4
+push constant 1
+push argument 0
+add
+pop pointer 1
+push that 0
+call Memory.poke 2
+pop temp 0
+push static 4
+push constant 1
+add
+push constant 2
+push argument 0
+add
+pop pointer 1
+push that 0
+call Memory.poke 2
+pop temp 0
+push static 4
+push constant 32
+add
+pop static 4
+push constant 0
+return
+function WaterPipe.drawArray2R 0
+push static 4
+push constant 2
+push argument 0
+add
+pop pointer 1
+push that 0
+call Memory.poke 2
+pop temp 0
+push static 4
+push constant 1
+add
+push constant 0
+push argument 0
+add
+pop pointer 1
+push that 0
+call Memory.poke 2
+pop temp 0
+push static 4
+push constant 32
+add
+pop static 4
+push constant 0
+return
+function WaterPipe.drawArray0RR 0
+push static 4
+push constant 0
+push argument 0
+add
+pop pointer 1
+push that 0
+call Memory.poke 2
+pop temp 0
+push static 4
+push constant 32
+add
+pop static 4
+push constant 0
+return
+function WaterPipe.drawArray1RR 0
+push static 4
+push constant 1
+push argument 0
+add
+pop pointer 1
+push that 0
+call Memory.poke 2
+pop temp 0
+push static 4
+push constant 32
+add
+pop static 4
+push constant 0
+return
+function WaterPipe.drawArray2RR 0
+push static 4
+push constant 2
+push argument 0
+add
+pop pointer 1
+push that 0
+call Memory.poke 2
+pop temp 0
+push static 4
+push constant 32
+add
+pop static 4
+push constant 0
+return
+function WaterPipe.drawArray0L 0
+push static 4
+push constant 1
+add
+push constant 1
+push argument 0
+add
+pop pointer 1
+push that 0
+call Memory.poke 2
+pop temp 0
+push static 4
+push constant 2
+add
+push constant 2
+push argument 0
+add
+pop pointer 1
+push that 0
+call Memory.poke 2
+pop temp 0
+push static 4
+push constant 32
+add
+pop static 4
+push constant 0
+return
+function WaterPipe.drawArray1L 0
+push static 4
+push constant 1
+add
+push constant 2
+push argument 0
+add
+pop pointer 1
+push that 0
+call Memory.poke 2
+pop temp 0
+push static 4
+push constant 2
+add
+push constant 0
+push argument 0
+add
+pop pointer 1
+push that 0
+call Memory.poke 2
+pop temp 0
+push static 4
+push constant 32
+add
+pop static 4
+push constant 0
+return
+function WaterPipe.drawArray2L 0
+push static 4
+push constant 1
+add
+push constant 0
+push argument 0
+add
+pop pointer 1
+push that 0
+call Memory.poke 2
+pop temp 0
+push static 4
+push constant 2
+add
+push constant 1
+push argument 0
+add
+pop pointer 1
+push that 0
+call Memory.poke 2
+pop temp 0
+push static 4
+push constant 32
+add
+pop static 4
+push constant 0
+return
+function WaterPipe.drawArray0LL 0
+push static 4
+push constant 2
+add
+push constant 2
+push argument 0
+add
+pop pointer 1
+push that 0
+call Memory.poke 2
+pop temp 0
+push static 4
+push constant 32
+add
+pop static 4
+push constant 0
+return
+function WaterPipe.drawArray1LL 0
+push static 4
+push constant 2
+add
+push constant 0
+push argument 0
+add
+pop pointer 1
+push that 0
+call Memory.poke 2
+pop temp 0
+push static 4
+push constant 32
+add
+pop static 4
+push constant 0
+return
+function WaterPipe.drawArray2LL 0
+push static 4
+push constant 2
+add
+push constant 1
+push argument 0
+add
+pop pointer 1
+push that 0
+call Memory.poke 2
+pop temp 0
+push static 4
+push constant 32
+add
+pop static 4
+push constant 0
+return
+function WaterPipe.getPosX 0
+push argument 0
+pop pointer 0
+push this 3
+return
+function WaterPipe.getUpperHeight 0
+push argument 0
+pop pointer 0
+push this 0
+return
+function WaterPipe.getSplit 0
+push argument 0
+pop pointer 0
+push this 1
+return

@@ -1,0 +1,183 @@
+//Weijia Deng，Project 09,Nand to Tetris
+/** Implements the bird */
+class Bird{
+    field Array bird;
+	//Image of a bird
+    field int currentAddress;
+	//Save the address to avoid multiplication
+ 	field int tempAddress;
+	//Save the address to avoid multiplication
+	field int upAddress;
+	field int downAddress;
+	//Address change for each move
+	
+	/** Constructor */
+    constructor Bird new(int posX,int y,int uS,int dS){
+		//posX: the x coordinate of the bird divided by 16
+		//y: the y coordinate of the bird
+		//us:Flying up speed
+		//ds:Flying down speed
+        var int i;
+        var Array current;
+        let bird=Array.new(30);
+		let upAddress=uS*32;
+		let downAddress=dS*32;
+        while(i<30){
+            let bird[i]=Array.new(2);
+            let i=i+1;
+        }
+		do setPos(posX,y);
+		//Reads the image of the bird.
+		//The first four lines and the last three lines are empty to avoid ghosting.
+		let current=bird[0];
+		let current[0]=0;
+		let current[1]=0;
+		let current=bird[1];
+		let current[0]=0;
+		let current[1]=0;
+		let current=bird[2];
+		let current[0]=0;
+		let current[1]=0;
+		let current=bird[3];
+		let current[0]=0;
+		let current[1]=0;
+		let current=bird[4];
+		let current[0]=0;
+		let current[1]=0;
+		let current=bird[5];
+		let current[0]=-1024;
+		let current[1]=15;
+		let current=bird[6];
+		let current[0]=1536;
+		let current[1]=96;
+		let current=bird[7];
+		let current[0]=960;
+		let current[1]=480;
+		let current=bird[8];
+		let current[0]=3776;
+		let current[1]=256;
+		let current=bird[9];
+		let current[0]=4128;
+		let current[1]=512;
+		let current=bird[10];
+		let current[0]=8208;
+		let current[1]=512;
+		let current=bird[11];
+		let current[0]=16400;
+		let current[1]=4064;
+		let current=bird[12];
+		let current[0]=16496;
+		let current[1]=4120;
+		let current=bird[13];
+		let current[0]=16456;
+		let current[1]=8196;
+		let current=bird[14];
+		let current[0]=16488;
+		let current[1]=8194;
+		let current=bird[15];
+		let current[0]=16424;
+		let current[1]=12290;
+		let current=bird[16];
+		let current[0]=8200;
+		let current[1]=4097;
+		let current=bird[17];
+		let current[0]=16380;
+		let current[1]=4098;
+		let current=bird[18];
+		let current[0]=7171;
+		let current[1]=2050;
+		let current=bird[19];
+		let current[0]=12286;
+		let current[1]=2054;
+		let current=bird[20];
+		let current[0]=-16386;
+		let current[1]=1037;
+		let current=bird[21];
+		let current[0]=7174;
+		let current[1]=824;
+		let current=bird[22];
+		let current[0]=2044;
+		let current[1]=496;
+		let current=bird[23];
+		let current[0]=448;
+		let current[1]=480;
+		let current=bird[24];
+		let current[0]=896;
+		let current[1]=224;
+		let current=bird[25];
+		let current[0]=15360;
+		let current[1]=30;
+		let current=bird[26];
+		let current[0]=-4096;
+		let current[1]=3;
+		let current=bird[27];
+		let current[0]=0;
+		let current[1]=0;
+		let current=bird[28];
+		let current[0]=0;
+		let current[1]=0;
+		let current=bird[29];
+		let current[0]=0;
+		let current[1]=0;
+        return this;
+    }
+	/** Draws the bird */
+    method void drawDefault(){
+        var int i;
+        var Array currentArray;
+        let i=0;
+        let tempAddress=currentAddress;
+        while(i<30)
+        {
+            let currentArray=bird[i];
+            do Memory.poke(tempAddress,currentArray[0]);
+            do Memory.poke(tempAddress+1,currentArray[1]);
+            let i=i+1;
+            let tempAddress=tempAddress+32;
+        }
+        return;
+    }
+	/** Erase the bird */
+    method void erase(){
+        var int i,tempAddress;
+        var Array currentArray;
+        let i=0;
+        let tempAddress=currentAddress;
+        while(i<30)
+        {
+            let currentArray=bird[i];
+            do Memory.poke(tempAddress,Memory.peek(tempAddress)&(~currentArray[0]));
+            do Memory.poke(tempAddress+1,Memory.peek(tempAddress+1)&(~currentArray[1]));
+            let i=i+1;
+            let tempAddress=tempAddress+32;
+        }
+        return;
+
+    }
+	/** Increase the flying height of the bird*/
+    method void increaseY(){
+        if(currentAddress>16416){
+            let currentAddress=currentAddress-upAddress;
+            }
+        return;
+    }
+	/** Decrease the flying height of the bird*/
+    method void decreaseY(){
+        if(currentAddress<22880){
+            let currentAddress=currentAddress+downAddress;
+            }
+        return;
+    }
+	/** Set the x and y coordinate */
+	method void setPos(int posX,int y){
+		let currentAddress=16384+(y*32)+posX;
+		return;
+	}
+	/** Destructuror */
+	method void dispose(){
+		do Memory.deAlloc(bird);
+		do Memory.deAlloc(this);
+		return;
+	}
+
+}

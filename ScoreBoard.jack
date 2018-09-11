@@ -1,0 +1,64 @@
+//Weijia Deng，Project 09,Nand to Tetris
+
+/**Implements the scoreboard*/
+class ScoreBoard{
+    field int lastScore;
+    field int currentScore;
+    field String line1;
+    field String line2;
+    field String posfix;
+    //Extra 0s to make the score bigger
+
+    /**Constructs a scoreboard*/
+    constructor ScoreBoard new(){
+        let lastScore=0;
+        let currentScore=0;
+        let line1="Max Score:";
+        let line2="Current Score:";
+        let posfix="00";
+        return this;
+    }
+    /**Destructor*/
+    method void dispose(){
+        do line1.dispose();
+        do line2.dispose();
+        do posfix.dispose();
+        do Memory.deAlloc(this);
+        return;
+    }
+    /**Shows the score board for the first time*/
+    method void show(){
+        do Screen.setColor(false);
+        do Screen.drawRectangle(0,0,125,255);
+        do Output.moveCursor(2,1);
+        do Output.printString(line1);
+        do Output.moveCursor(4,1);
+        do Output.printInt(lastScore);
+        do Output.printString(posfix);
+        do Output.moveCursor(6,1);
+        do Output.printString(line2);
+        do Output.moveCursor(8,1);
+        do Output.printInt(currentScore);
+        do Output.printString(posfix);
+        return;
+    }
+    /**Increases the score*/
+    method void increase(){
+        let currentScore=currentScore+1;
+        return;
+    }
+    /**Updates the score info*/
+    method void update(){
+        do Output.moveCursor(8,1);
+        do Output.printInt(currentScore);
+        do Output.printString(posfix);
+        return;
+    }
+    /**Compare current score with max score, if bigger, then set the max score to current one*/
+    method void compare(){
+        if(lastScore<currentScore)
+        {let lastScore=currentScore;}
+        let currentScore=0;
+        return;
+    }
+}

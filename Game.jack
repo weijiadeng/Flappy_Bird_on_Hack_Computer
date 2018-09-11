@@ -1,0 +1,252 @@
+//Weijia Deng，Project 09,Nand to Tetris
+
+/**
+ * Implements the Flying Bird game.
+ * This simple game allows the user to move a bird up and down, 
+ * and try to dodge the coming water pipes as many as possible.
+ * When the game starts, a bird of 30 by 30 pixels is shown at the
+ * mid-right area of the screen. The user controls the bird as follows.
+ * The up arrow key is used to move the bird up.If the user not press any key,
+ * the bird moves down. The 'p' key is used to pause the game. A series of 
+ * water pipes will move right after starting the game. Please try to dodge them
+ * and fly as long as possible.
+ */
+
+class Game{
+    field BirdControl bird;
+    field WaterPipe bk,bk1,bk2,pt;
+    field ScoreBoard scoreBoard;
+    field String welcomeText,pauseText,gameOverText,gameOverText1;
+    field String ins1,ins2,ins3,ins4,ins5,ins6,ins7;
+   /** Constructs a new Flying Bird Game. */
+    constructor Game new(){
+        do Ground.init();
+        do WaterPipe.init();
+        let bird=BirdControl.new(18,128,3,2);
+        //The default position of the bird is 288(18*16),128. Moving up speed is 3, moving down speed is 2.
+        let bk=WaterPipe.new(10,50,0);
+        //The default x coordinate of the third pair of pipes is 0. The default height of the upper pipe is 10.
+        //The default length of the split is 50.    
+        let bk1=WaterPipe.new(30,70,7);
+        let bk2=WaterPipe.new(90,80,14);
+        let scoreBoard=ScoreBoard.new();
+        let welcomeText="Press S to start game.";
+        let pauseText="Paused. Press R to resume.";
+        let gameOverText="Game Over. Press R to resume.";
+        let gameOverText1="Press Q to quit.";
+        let ins1="Press P";
+        let ins2="To Pause.";
+        let ins3="Press Up Arrow";
+        let ins4="To Fly Up.";
+        let ins5="Not Pressing";
+        let ins6="Any Key to";
+        let ins7="Fly Down.";
+        return this;
+    }
+    /** Destructor */
+    method void dispose(){
+        do bird.dispose();
+        do bk.dispose();
+        do bk1.dispose();
+        do bk2.dispose();
+        do Ground.deAllocAll();
+        do WaterPipe.deAllocAll();
+        do scoreBoard.dispose();
+        do welcomeText.dispose();
+        do pauseText.dispose();
+        do gameOverText.dispose();
+        do gameOverText1.dispose();
+        do ins1.dispose();
+        do ins2.dispose();
+        do ins3.dispose();
+        do ins4.dispose();
+        do ins5.dispose();
+        do ins6.dispose();
+        do ins7.dispose();
+        do Memory.deAlloc(this);
+        return;
+     
+
+    }
+    /** Determine whether the bird collides with the pipe.True :The bird survives. False: The bird deads. */
+    method bool judgeColl(){
+        var int upperBound,lowerBound,currentPos;
+        let upperBound=pt.getUpperHeight()+11;
+        //15 is the height of the upper pipe's head.
+        let lowerBound=pt.getSplit()+upperBound-26;
+        //The bird is 30*30 , and the uppest three lines and lowest threelines are empty
+        let currentPos=bird.getPos();
+        if((currentPos>upperBound)&((currentPos)<lowerBound)){ 
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    /** Run the flying bird game*/
+     method void run(){
+        var int key;
+        var boolean isFound;
+        do drawFrame();
+        let key=0;
+        do scoreBoard.show();
+        do Tools.setSeed(welcome());
+        //Uses the waiting time to produce the random seed.
+        while(true)
+        {
+            do Ground.draw();
+            do Ground.moveRight();
+            do bk.draw();
+            do bk1.draw();
+            do bk2.draw();
+            do WaterPipe.globalMoveRight();
+            //Modify the pipe image to generate the effect of moving right by one pixel.
+            do bk.moveRight();
+            do bk1.moveRight();
+            do bk2.moveRight();
+            let key=Keyboard.keyPressed();
+            if (key = 131) { do bird.moveUp();}// up arrow
+                else {
+                    if(key=80)//P
+                    {do pause();} 
+                    do bird.moveDown(); 
+                    //If not pressing any key, move down.
+                    }    
+            let isFound=false;
+            if(pt>19){
+                    do scoreBoard.increase();
+                    do scoreBoard.update();
+            }
+            if((bk.getPosX()>15)&(bk.getPosX()<19)){
+                let pt=bk;
+                let isFound=true;
+            }
+            if((bk1.getPosX()>15)&(bk1.getPosX()<19)){
+                let pt=bk1;            
+                let isFound=true;
+            }
+            if((bk2.getPosX()>15)&(bk2.getPosX()<19)){
+                let pt=bk2;            
+                let isFound=true;
+                do Tools.setSeed(bird.getPos());
+            }
+            if(isFound){
+                if(judgeColl()){
+                //The bird survives,do nothing.
+                }
+                else{
+                  // The bird is dead
+                    do scoreBoard.compare();
+                    do scoreBoard.show();
+                    if(gameOver())
+                    {
+                        return;
+                        //the player decides to quit.
+                    }
+                    //the player decides to restart.
+                   
+                }
+            }
+        }
+        return;
+    }
+    /** Draws the frame of valid display zone and print the instrucion info.*/
+    method void drawFrame(){
+        do Screen.setColor(true);
+        do Screen.drawRectangle(126,0,385,255);
+        do Screen.setColor(false);
+        do Screen.drawRectangle(128,0,383,255);
+        do Output.moveCursor(1,49);
+        do Output.printString(ins1);
+        do Output.moveCursor(2,49);
+        do Output.printString(ins2);
+        do Output.moveCursor(4,49);                
+        do Output.printString(ins3);
+        do Output.moveCursor(5,49);
+        do Output.printString(ins4);
+        do Output.moveCursor(7,49);
+        do Output.printString(ins5);
+        do Output.moveCursor(8,49);
+        do Output.printString(ins6);
+        do Output.moveCursor(9,49);
+        do Output.printString(ins7);
+        return;
+    }
+    /** Shows the welcome info and records the waiting time.*/
+    method int welcome(){
+        var int i;
+        let i=0;
+        do Screen.setColor(true);
+        do Screen.drawRectangle(130,90,380,188);
+        do Screen.setColor(false);
+        do Screen.drawRectangle(132,92,378,186);
+        do Output.moveCursor(12,18);
+        do Output.printString(welcomeText);                              
+        while(true){
+            if(Keyboard.keyPressed()=83)//S
+            {
+                  do Screen.drawRectangle(128,0,383,255);
+                  return i;
+
+            }
+            else{
+               let i=i+1;
+            }
+        }
+        return i;
+    }
+    /** Shows the gameover info, give the player two choices: to restart or to quit */
+    method bool gameOver(){
+        while(bird.getPos()<230)
+        {do bird.moveDown();}
+        do Screen.setColor(true);
+        do Screen.drawRectangle(130,90,380,188);
+        do Screen.setColor(false);
+        do Screen.drawRectangle(132,92,378,186);
+        do Output.moveCursor(12,18);
+        do Output.printString(gameOverText);                
+        do Output.moveCursor(13,18);
+        do Output.printString(gameOverText1);                
+        while(true){
+            if(Keyboard.keyPressed()=82)//R
+            {
+                  do Screen.drawRectangle(128,0,383,255);
+                  do bird.setPos(18,128);
+                  do bk.setPos(10,50,0);
+                  do bk1.setPos(30,70,7);
+                  do bk2.setPos(90,80,14);
+                  return false;
+                  //The player decides to restart.
+
+            }
+            else{
+                if(Keyboard.keyPressed()=81)//Q
+                {
+                    do Screen.drawRectangle(0,0,511,255);
+                    return true;
+                    //The player decides to quit.
+                }
+            }
+        }
+        return false;
+    }
+    //Shows the pause info and handles resume.
+    method void pause(){
+        do Screen.setColor(true);
+        do Screen.drawRectangle(130,90,380,188);
+        do Screen.setColor(false);
+        do Screen.drawRectangle(132,92,378,186);
+        do Output.moveCursor(12,18);
+        do Output.printString(pauseText);
+        while(true){
+            if(Keyboard.keyPressed()=82)//R
+            {
+                do Screen.drawRectangle(128,0,383,255);
+                return;
+
+            }
+        }
+        return;
+        
+    }
+}
