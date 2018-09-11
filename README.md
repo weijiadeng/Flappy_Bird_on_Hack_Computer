@@ -1,4 +1,4 @@
-# Flappo Birds on nand2tetris
+# Flappo Birds on Hack Computer
 
 ## About the game
 This simple game allows the user to move a bird up and down, and try to dodge the upcoming
